@@ -9,6 +9,7 @@ apt_repository 'dotcloud' do
 end
 
 package "lxc-docker-#{node['deis']['docker']['version']}"
+package "linux-image-extra-#{node['kernel']['release']}"
 
 service 'docker' do
   provider Chef::Provider::Service::Upstart
